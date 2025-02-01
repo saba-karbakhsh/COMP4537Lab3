@@ -6,6 +6,7 @@ const fs = require('fs');
 http.createServer(function (req, res) {
     let q = url.parse(req.url, true);
     let path = q.pathname;
+    console.log(path);
     if (path === '/getDate/'){
     res.writeHead(200, {'Content-Type': 'text/html'});
     let dateModule = require('./modules/utils.js');
