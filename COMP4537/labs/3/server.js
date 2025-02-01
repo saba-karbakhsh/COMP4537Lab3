@@ -4,6 +4,7 @@ let messages = require('./lang/en/en.js');
 const fs = require('fs');
 
 http.createServer(function (req, res) {
+    console.log("ss");
     let q = url.parse(req.url, true);
     let path = q.pathname;
     console.log(path);
