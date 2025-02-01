@@ -3,16 +3,11 @@ let url = require('url');
 let messages = require('./lang/en/en.js');
 const fs = require('fs');
 
-let dive = document.getElementById('a');
 http.createServer(function (req, res) {
-    const query = parsedUrl.query;
     let q = url.parse(req.url, true);
     let path = q.pathname;
-    res.writeHead(200, {'Content-Type': 'text/palin'});
-    dive.innerHTML = path;
-    res.write(path);
-    res.end();
-    if (path === '/COMP4537/labs/3/getDate/' && query.name) {
+    
+    if (path === '/COMP4537/labs/3/getDate/' && q.query.name) {
     res.writeHead(200, {'Content-Type': 'text/html'});
     let dateModule = require('./modules/utils.js');
     let date = dateModule.getDate();
