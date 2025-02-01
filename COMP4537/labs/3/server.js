@@ -3,11 +3,12 @@ let url = require('url');
 let messages = require('./lang/en/en.js');
 const fs = require('fs');
 console.log("ss");
-
+let dive = document.getElementById('a');
 http.createServer(function (req, res) {
     let q = url.parse(req.url, true);
     let path = q.pathname;
     res.writeHead(200, {'Content-Type': 'text/palin'});
+    dive.innerHTML = path;
     res.write(path);
     res.end();
 //     if (path === '/COMP4537/labs/3/getDate'){
