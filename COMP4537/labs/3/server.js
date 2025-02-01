@@ -6,7 +6,6 @@ const fs = require('fs');
 http.createServer(function (req, res) {
     let q = url.parse(req.url, true);
     let path = q.pathname;
-    console.log(path);
     if (path === '/COMP4537/labs/3/getDate/'){
     res.writeHead(200, {'Content-Type': 'text/html'});
     let dateModule = require('./modules/utils.js');
@@ -29,11 +28,10 @@ http.createServer(function (req, res) {
     });
     res.end();
 }
-else if(path === '/COMP4537/labs/3/readFile/'){
+else if(path === '/COMP4537/labs/3/readFile/file.txt'){
     res.writeHead(200, {'Content-Type': 'text/plain'});
     const fs = require('fs');
-    let fileName = q.query;
-    fs.readFile(fileName, 'utf8', function(err, data) {
+    fs.readFile("file.txt", 'utf8', function(err, data) {
         if (err) {
             console.log('Error opening file');
             return;
