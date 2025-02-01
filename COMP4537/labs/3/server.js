@@ -12,7 +12,7 @@ http.createServer(function (req, res) {
     dive.innerHTML = path;
     res.write(path);
     res.end();
-    if (path === '/COMP4537/labs/3/getDate' && query.name) {
+    if (path === '/COMP4537/labs/3/getDate/' && query.name) {
     res.writeHead(200, {'Content-Type': 'text/html'});
     let dateModule = require('./modules/utils.js');
     let date = dateModule.getDate();
@@ -21,7 +21,7 @@ http.createServer(function (req, res) {
     res.write(result.replace('%1', name));
     res.end();
     }
-    else if(path === '/COMP4537/labs/3/writeFile' && q.query.text){
+    else if(path === '/COMP4537/labs/3/writeFile/' && q.query.text){
     res.writeHead(200, {'Content-Type': 'text/plain'});
     let text = q.query.text;
     res.write(text);
