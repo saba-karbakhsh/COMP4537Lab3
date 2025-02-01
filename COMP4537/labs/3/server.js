@@ -42,6 +42,6 @@ else if(path === '/COMP4537/labs/3/readFile/file.txt'){
 }
 else{
     res.writeHead(404, {'Content-Type': 'text/html'});
-    res.write('404 Not Found');
+    res.write('40444 Not Found');
 }
 }).listen(process.env.PORT || 8888);
