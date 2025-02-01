@@ -5,11 +5,11 @@ const fs = require('fs');
 console.log("ss");
 
 http.createServer(function (req, res) {
-    console.log("ss");
     let q = url.parse(req.url, true);
     let path = q.pathname;
-    console.log(path);
-    if (path === '/getDate/'){
+    res.writeHead(200, {'Content-Type': 'text/palin'});
+    res.write(path);
+    if (path === '/COMP4537/labs/3/getDate'){
     res.writeHead(200, {'Content-Type': 'text/html'});
     let dateModule = require('./modules/utils.js');
     let date = dateModule.getDate();
@@ -18,7 +18,7 @@ http.createServer(function (req, res) {
     res.write(result.replace('%1', name));
     res.end();
     }
-    else if(path === '/writeFile/'){
+    else if(path === '/COMP4537/labs/3/writeFile'){
     res.writeHead(200, {'Content-Type': 'text/plain'});
     let text = q.query.text;
     res.write(text);
@@ -31,7 +31,7 @@ http.createServer(function (req, res) {
     });
     res.end();
 }
-else if(path === '/readFile/file.txt'){
+else if(path === '/COMP4537/labs/3/readFile/file.txt'){
     res.writeHead(200, {'Content-Type': 'text/plain'});
     const fs = require('fs');
     fs.readFile("file.txt", 'utf8', function(err, data) {
