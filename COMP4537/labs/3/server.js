@@ -2,6 +2,7 @@ let http = require('http');
 let url = require('url');
 let messages = require('./lang/en/en.js');
 const fs = require('fs');
+console.log("ss");
 
 http.createServer(function (req, res) {
     console.log("ss");
