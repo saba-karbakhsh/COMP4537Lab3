@@ -7,7 +7,7 @@ http.createServer(function (req, res) {
     let q = url.parse(req.url, true);
     let path = q.pathname;
     console.log(path);
-    if (path === '/COMP4537/labs/3/getDate'){
+    if (path === '/COMP4537/labs/3/getDate/'){
     res.writeHead(200, {'Content-Type': 'text/html'});
     let dateModule = require('./modules/utils.js');
     let date = dateModule.getDate();
@@ -16,7 +16,7 @@ http.createServer(function (req, res) {
     res.write(result.replace('%1', name));
     res.end();
     }
-    else if(path === '/COMP4537/labs/3/writeFile'){
+    else if(path === '/COMP4537/labs/3/writeFile/'){
     res.writeHead(200, {'Content-Type': 'text/plain'});
     let text = q.query.text;
     res.write(text);
@@ -29,7 +29,7 @@ http.createServer(function (req, res) {
     });
     res.end();
 }
-else if(path === '/COMP4537/labs/3/readFile'){
+else if(path === '/COMP4537/labs/3/readFile/'){
     res.writeHead(200, {'Content-Type': 'text/plain'});
     const fs = require('fs');
     let fileName = q.query;
